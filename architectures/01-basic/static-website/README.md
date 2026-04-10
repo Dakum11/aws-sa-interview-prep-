@@ -23,7 +23,7 @@ The **browser** then processes this response, stores **authentication tokens** i
 
 ---
 
-## 📝 Example: Let's See What Happens When We Access www.f[PASSWORD]pp[PASSWORD]
+## 📝 Example: Let's See What Happens When We Access www.foodapp.com
 
 ### 📍 Step 1: User Opens a Website
 
@@ -31,7 +31,7 @@ The **browser** then processes this response, stores **authentication tokens** i
 
 **1️⃣ DNS Lookup**
 
-**Browser asks:** "What is the IP of f[PASSWORD]pp[PASSWORD]?"
+**Browser asks:** "What is the IP of www.foodapp.com ?"
 
 🔍 **DNS returns the IP.**
 
@@ -44,7 +44,7 @@ The **browser** then processes this response, stores **authentication tokens** i
 **Browser sends a request:**
 
 ```http
-GET https://f[PASSWORD]pp[PASSWORD]/login
+GET https://www.foodapp.com/login
 ```
 
 The request goes to the **Web Server** (Backend Application)
@@ -71,7 +71,7 @@ Web Server receives request and:
 ### 🔐 Step 3: User Enters Login Details
 
 ```plaintext
-Email: test@f[PASSWORD]pp[PASSWORD]
+Email: test@foodapp.com
 Password: 1234
 ```
 
@@ -84,7 +84,7 @@ POST /login
 Content-Type: application/json
 
 {
-  "email": "test@f[PASSWORD]pp[PASSWORD]",
+  "email": "test@foodapp.com,
   "password": "1234"
 }
 ```
@@ -119,7 +119,7 @@ if (password.length === 0) {
 
 ```sql
 SELECT * FROM users
-WHERE email = 'test@f[PASSWORD]pp[PASSWORD]';
+WHERE email = 'test@foodapp.com';
 ```
 
 **What happens next?**
@@ -171,7 +171,7 @@ Database only does **ONE thing**:
 
 ```sql
 -- Database just responds to queries
-SELECT * FROM users WHERE email = 'test@f[PASSWORD]pp[PASSWORD]';
+SELECT * FROM users WHERE email = 'test@foodapp.com';
 -- Returns: user data
 ```
 
@@ -190,7 +190,7 @@ SELECT * FROM users WHERE email = 'test@f[PASSWORD]pp[PASSWORD]';
 ```json
 {
   "status": "success",
-  "message": "[PASSWORD]essful",
+  "message": "login successful",
   "token": "JWT-xyz123"
 }
 ```
@@ -270,25 +270,25 @@ sequenceDiagram
     participant 🗄️ Database
 
     Note over 👤,🗄️: STEP 1: User Opens Website
-    👤->>🌐: Opens www.f[PASSWORD]pp[PASSWORD]
-    🌐->>🔍: What is IP of f[PASSWORD]pp[PASSWORD]?
+    👤->>🌐: Opens www.foodapp.com
+    🌐->>🔍: What is IP of www.foodapp.com?
     🔍->>🌐: Returns IP address
     Note over 🌐: ✅ Browser knows where to go
 
     Note over 👤,🗄️: STEP 2: Request to Web Server
-    🌐->>🖥️: GET https://f[PASSWORD]pp[PASSWORD]/login
+    🌐->>🖥️: GET https://www.foodapp.com/login
     Note over 🖥️: Understands route: /login
     🖥️->>🌐: Returns login page (HTML/JS/CSS)
 
     Note over 👤,🗄️: STEP 3: User Enters [PASSWORD]entials
-    👤->>🌐: Email: test@f[PASSWORD]pp[PASSWORD]<br/>Password: 1234
+    👤->>🌐: Email: test@foodapp.com <br/>Password: 1234
 
     Note over 👤,🗄️: STEP 4: Browser Sends POST Request
     🌐->>🖥️: POST /login<br/>{email, password}
 
     Note over 👤,🗄️: STEP 5: Backend Processing
     Note over 🖥️: ✅ Validate input<br/>✅ Check email format<br/>✅ Check password not empty
-    🖥️->>🗄️: SELECT * FROM users<br/>WHERE email='test@f[PASSWORD]pp[PASSWORD]'
+    🖥️->>🗄️: SELECT * FROM users<br/>WHERE email='test@foodapp.com'
 
     Note over 👤,🗄️: STEP 6: Database Response
     🗄️->>🖥️: Returns user data
