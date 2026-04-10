@@ -16,7 +16,7 @@ Let see what happen when we try to access a Website : wwww.foodapp.com
 
 what happens ? 
 
-    1. DNS lookup
+#### 1. DNS lookup ####
 
 Brwoser ask : what is the IP of foodapp.com?
 
@@ -37,11 +37,11 @@ What happens in Web Server ?
 
 Web Server recieves request and 
 
-    1 : Understand Route 
+#### 1 : Understand Route ####
 
 ./login page requested 
 
-    2 : Sends HTML Page back or API reponse. 
+#### 2 : Sends HTML Page back or API reponse. #### 
 
 If it's a simple website : It will send the login page ( HTML /JS/CSS)
 
