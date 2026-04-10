@@ -10,51 +10,71 @@ The user sends a request from the browser, which resolves through DNS and reache
 
 ## Example : 
 
-Let see what happen when we try to access a Website : wwww.foodapp.com
+# 🌐 Let's See What Happens When We Access a Website: wwww.foodapp.com
 
-### Step 1 : User Opens a Website ### 
+## 📍 Step 1: User Opens a Website
 
-what happens ? 
+### What happens?
 
-#### 1. DNS lookup ####
+#### 1️⃣ DNS Lookup
 
-Brwoser ask : what is the IP of foodapp.com?
+**Browser asks:** "What is the IP of foodapp.com?"
 
-DNS returns the IP. 
+🔍 **DNS returns the IP.**
 
-Now Browser know where to go. 
+✅ Now Browser knows where to go.
 
+---
 
-### Step 2 : Request goes to the Web Server ###
+## 🚀 Step 2: Request Goes to the Web Server
 
-Browser sends a request : 
+**Browser sends a request:**
 
-Get https://foodapp.com/login 
+```http
+GET https://foodapp.com/login
+```
 
-The request goes the Web Server ( Backend Application ) Python , java or Node.js
+The request goes to the **Web Server** (Backend Application)
+- 🐍 Python
+- ☕ Java  
+- 💚 Node.js
 
-What happens in Web Server ? 
+### 🤔 What happens in Web Server?
 
-Web Server recieves request and 
+Web Server receives request and:
 
-#### 1 : Understand Route ####
+**1️⃣ Understands Route**
+- `/login` page requested
 
-./login page requested 
+**2️⃣ Sends HTML Page back or API response**
 
-#### 2 : Sends HTML Page back or API reponse. #### 
+| Type | Response |
+|------|----------|
+| 🌐 **Simple website** | Sends the login page (HTML/JS/CSS) |
+| ⚡ **Modern app** | Sends API response only |
 
-If it's a simple website : It will send the login page ( HTML /JS/CSS)
+---
 
-if it's a modern app : It will semd api response only
+## 🔐 Step 3: User Enters Login Details
 
-### Step 3 : User enter the login details
+```plaintext
+Email: test@foodapp.com
+P[PASSWORD]ord: 1234
+```
 
-Plain text 
+---
 
-Email  : test@foodapp.com 
-Password : 1234
+## 📤 Step 4: Browser Sends the POST Request
 
-### Step 4: Browser sends the POST request 
+```http
+POST https://foodapp.com/login
+Content-Type: application/json
+
+{
+  "email": "test@foodapp.com",
+  "p[PASSWORD]ord": "1234"
+}
+```
 
 
 
